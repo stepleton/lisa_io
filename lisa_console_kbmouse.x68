@@ -298,7 +298,7 @@ InitLisaConsoleKbMouse:
     RTS                            ; Back to caller
 
 
-    ; LisaConsolePollKbMouse - Attempt to read and decode a byte from the COPS
+    ; LisaConsolePollKbMouse -- Attempt to read and decode a byte from the COPS
     ; Args:
     ;   (none)
     ; Notes:
@@ -320,7 +320,7 @@ LisaConsolePollKbMouse:
     RTS                            ; Back to the caller
 
 
-    ; LisaConsoleWaitForKbMouse - Block until we can get and decode a COPS byte
+    ; LisaConsoleWaitForKbMouse -- Block until we can get and decode a COPS byte
     ; Args:
     ;   (none)
     ; Notes:
@@ -338,7 +338,7 @@ LisaConsoleWaitForKbMouse:
     RTS                            ; Back to the caller
 
 
-    ; LisaConsoleDelayForKbMouse - Pause a bit, try to get/decode a COPS byte
+    ; LisaConsoleDelayForKbMouse -- Pause a bit, try to get/decode a COPS byte
     ; Args:
     ;   D2 (word): Number of iterations to wait for a COPS byte, minus one
     ; Notes:
