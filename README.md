@@ -1,4 +1,5 @@
-# `lisa_io` -- basic low-level I/O routines for Lisa
+`lisa_io` -- basic low-level I/O routines for Lisa
+==================================================
 
 This repository is a library of several standalone assembly language software
 components for accessing various standard input/output devices of the Apple
@@ -11,7 +12,8 @@ some ways of using those facilities, are supported by this library. More may be
 added as directed by need and spare time.
 
 
-## Documentation
+Documentation
+-------------
 
 Because people might choose to package individual library components into their
 own software projects, nearly all important documentation---including
@@ -19,7 +21,8 @@ references, acknowledgements, and release history---appears within the source
 code files themselves.
 
 
-## Library components
+Library components
+------------------
 
 | Facility                 | Component                       | Notes        |
 |--------------------------|---------------------------------|--------------|
@@ -47,7 +50,8 @@ code files themselves.
 [5]: bdf_to_lisa_console_screen_x68.py
 
 
-## Nobody owns `lisa_io`.
+Nobody owns `lisa_io`
+---------------------
 
 This I/O library and any supporting programs, software libraries, and
 documentation distributed alongside it are released into the public domain
