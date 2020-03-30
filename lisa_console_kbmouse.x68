@@ -1,9 +1,11 @@
-* Apple Lisa I/O library: keyboard and mouse routines.
+* Apple Lisa I/O library: keyboard and mouse routines
+* ===================================================
 *
 * Forfeited into the public domain with NO WARRANTY. Read LICENSE for details.
 *
 *
-* ## Introduction
+* Introduction
+* ------------
 *
 * This file contains procedures for gathering input from the Apple Lisa's
 * keyboard and mouse from the COPS microcontroller on the Lisa's I/O board.
@@ -23,7 +25,8 @@
 * interrupt handlers but have not been tested in this way.
 *
 *
-* ## Usage
+* Usage
+* -----
 *
 * This library is written in the dialect of 68000 macro assembly supported by
 * the open-source Windows-only EASy68k development environment and simulator
@@ -151,7 +154,8 @@
 * below to 0.
 *
 *
-* ## The library's operating requirements
+* The library's operating requirements
+* ------------------------------------
 *
 * The library assumes that the Lisa's MMU setup and the contents of its first
 * $800 bytes of RAM are both in the configurations that the Lisa's boot ROM
@@ -169,7 +173,8 @@
 * full runtime of the program.
 *
 *
-* ## Resources
+* Resources
+* ---------
 *
 * The following resources were used to develop this library:
 *
@@ -185,14 +190,16 @@
 *      http://john.ccac.rwth-aachen.de:8000/patrick/KBDtester.htm
 *
 *
-* ## Acknowledgements
+* Acknowledgements
+* ----------------
 *
 * As with so many of my Lisa hobby software development efforts, the excellent
 * technical resources furnished by Ray Arachelian, Patrick Schäfer, and
 * bitsavers.org are gratefully acknowledged.
 *
 *
-* ## Revision history
+* Revision history
+* ----------------
 *
 * This section records the development of this file as part of the `lisa_io`
 * library at <http://github.com/stepleton/lisa_io>.
@@ -200,8 +207,12 @@
 *    - 24 March 2020: Initial release.
 *      (Tom Stepleton, stepleton@gmail.com, London)
 *
+*    - 30 March 2020: Cosmetic changes to documentation.
+*      (Tom Stepleton)
 *
-* ## Technical notes
+*
+* Technical notes
+* ---------------
 *
 * *On VIA addresses* -- The Lisa I/O board contains two MOS 6522 VIA chips, but
 * only VIA 1 is responsible for interfacing with the COPS microcontroller. This

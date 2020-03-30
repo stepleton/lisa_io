@@ -1,9 +1,11 @@
-* # Apple Lisa I/O library: fixed-width text drawing routines.
+* Apple Lisa I/O library: fixed-width text drawing routines
+* =========================================================
 *
 * Forfeited into the public domain with NO WARRANTY. Read LICENSE for details.
 *
 *
-* ## Introduction
+* Introduction
+* ------------
 *
 * This file contains macros and procedures for drawing fixed-width text to the
 * Lisa's bitmap display. The procedures supply some basic functions
@@ -22,7 +24,8 @@
 * small amount of internal state) to remain in the same memory locations.
 *
 *
-* ## Usage
+* Usage
+* -----
 *
 * This library is written in the dialect of 68000 macro assembly supported by
 * the open-source Windows-only EASy68k development environment and simulator
@@ -70,7 +73,8 @@
 * portions of RAM for some reason.
 *
 *
-* ## Invoking the `mFont8` macro
+* Invoking the `mFont8` macro
+* ---------------------------
 *
 * `mFont8` expects a "font name" first argument, which it uses to construct the
 * names of two symbols (substitite "MyFont" with the value of the argument):
@@ -94,7 +98,8 @@
 * "GUARDS" below for instructions.
 *
 *
-* ## Font data from you
+* Font data from you
+* ------------------
 *
 * Font data for the `mFont8` macro is a contiguous array of 256 character
 * bitmaps, with each bitmap's bytes ordered from top to bottom.
@@ -124,7 +129,8 @@
 * and `fony` (http://hukka.ncn.fi/?fony) may be useful for designing new fonts.
 *
 *
-* ## The library's operating requirements
+* The library's operating requirements
+* ------------------------------------
 *
 * The library assumes that the Lisa's MMU setup and the contents of its first
 * $800 bytes of RAM are both in the configurations that the Lisa's boot ROM
@@ -138,7 +144,8 @@
 * of the program.
 *
 *
-* ## Resources
+* Resources
+* ---------
 *
 * The following resources were used to develop this library:
 *
@@ -150,20 +157,25 @@
 *      http://bitsavers.org/pdf/apple/lisa/firmware/Lisa_Boot_ROM_Asm_Listing.TEXT
 *
 *
-* ## Acknowledgements
+* Acknowledgements
+* ----------------
 *
 * As with so many of my Lisa hobby software development efforts, the excellent
 * technical resources furnished by Ray Arachelian and by bitsavers.org are
 * gratefully acknowledged.
 *
 *
-* ## Revision history
+* Revision history
+* ----------------
 *
 * This section records the development of this file as part of the `lisa_io`
 * library at <http://github.com/stepleton/lisa_io>.
 *
 *    - 15 March 2020: Initial release.
 *      (Tom Stepleton, stepleton@gmail.com, London)
+*
+*    - 30 March 2020: Cosmetic changes to documentation.
+*      (Tom Stepleton)
 
 
 **** GUARDS for making certain that shared code generation occurs exactly once

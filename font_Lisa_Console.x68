@@ -1,9 +1,11 @@
-* # Apple Lisa I/O library: LisaConsole 9x8 console font
+* Apple Lisa I/O library: LisaConsole 9x8 console font
+* ====================================================
 *
 * Forfeited into the public domain with NO WARRANTY. Read LICENSE for details.
 *
 *
-* ## Introduction
+* Introduction
+* ------------
 *
 * This file contains data definitions for a 9x8 bitmap font, suitable for use
 * with the fixed-width text drawing routines in `lisa_console_screen.x68`. With
@@ -14,10 +16,17 @@
 * or scroll down to read more.
 *
 *
-* ## Revision history
+* Revision history
+* ----------------
+*
+* This section records the development of this file as part of the `lisa_io`
+* library at <http://github.com/stepleton/lisa_io>.
 *
 *    - 7 March 2020: Initial release.
 *      (Tom Stepleton, stepleton@gmail.com, London)
+*
+*    - 30 March 2020: Cosmetic changes to documentation.
+*      (Tom Stepleton)
 
 
 * Section 1: Font metrics and convenience macro

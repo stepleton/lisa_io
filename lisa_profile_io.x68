@@ -1,9 +1,11 @@
-* # Apple Lisa I/O library: parallel port hard drive routines.
+* Apple Lisa I/O library: parallel port hard drive routines
+* =========================================================
 *
 * Forfeited into the public domain with NO WARRANTY. Read LICENSE for details.
 *
 *
-* ## Introduction
+* Introduction
+* ------------
 *
 * This file contains a simple and compact (460 bytes compiled) library for
 * reading/writing blocks from/to an Apple parallel port hard drive (e.g.
@@ -23,7 +25,8 @@
 * unlikely to be a good fit for multitasking applications.
 *
 *
-* ## Usage
+* Usage
+* -----
 *
 * This library exports three procedures:
 *
@@ -68,7 +71,8 @@
 * location of `zProFileErrCode`.
 *
 *
-* ## The library's operating requirements
+* The library's operating requirements
+* ------------------------------------
 *
 * The library assumes only that the Lisa's MMU configuration places VIA
 * registers in the same locations that the Lisa boot ROM's MMU setup places
@@ -78,7 +82,8 @@
 * notes" section below.
 *
 *
-* ## Adding the library to your project
+* Adding the library to your project
+* ----------------------------------
 *
 * This library is written in the dialect of 68000 macro assembly supported by
 * the open-source Windows-only EASy68k development environment and simulator
@@ -96,7 +101,8 @@
 *    INCLUDE lisa_profile_io.x68    ; Relocatable ProFile I/O library
 *
 *
-* ## Resources
+* Resources
+* ---------
 *
 * The following resources were used to develop this library:
 *
@@ -116,14 +122,16 @@
 *      http://bitsavers.org/pdf/apple/lisa/firmware/Lisa_Boot_ROM_Asm_Listing.TEXT
 *
 *
-* ## Acknowledgements
+* Acknowledgements
+* ----------------
 *
 * Advice from Ray Arachelian is gratefully acknowledged, as are the excellent
 * technical resources of LisaEm, bitsavers.org, and Dr. Patrick Schäfer's
 * writings on Apple parallel port drives.
 *
 *
-* ## Revision history
+* Revision history
+* ----------------
 *
 * This section records the development of this file as part of the `lisa_io`
 * library at <http://github.com/stepleton/lisa_io>.
@@ -131,8 +139,12 @@
 *    - 7 March 2020: Initial release.
 *      (Tom Stepleton, stepleton@gmail.com, London)
 *
+*    - 30 March 2020: Cosmetic changes to documentation.
+*      (Tom Stepleton)
 *
-* ## Technical notes
+*
+* Technical notes
+* ---------------
 *
 * *On VIA addresses* -- The Lisa I/O board contains two MOS 6522 VIA chips, and
 * both are responsible for different aspects of controlling the built-in
