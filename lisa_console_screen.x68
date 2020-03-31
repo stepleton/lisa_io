@@ -345,7 +345,7 @@ _Scroll8x\1x\2:
       MOVE.W  #((_kRDel8x\1x\2/2)-1),D0  ; For clearing the bottom screen row
 .lc\@ CLR.W   (A0)+                  ; Clear data
       DBRA    D0,.lc\@               ; Loop until whole bottom row is clear
-      SUBQ.W  #1,zRow\1x\2           ; Decrement cursor position row
+      SUBQ.W  #1,zRow8x\1x\2         ; Decrement cursor position row
       MOVEM.L (SP)+,D0/A0-A1         ; Restore registers we used
       RTS                            ; Back to the caller
 
@@ -371,8 +371,8 @@ _Print8x\1x\2:
       CMPI.B  #$0A,D0                ; Is this a newline?
       BEQ.S   .nl\@                  ; Yes, skip ahead to do a newline
 
-      MOVE.W  zCol\1x\2,D1           ; Copy current column
-      MOVE.W  zRow\1x\2,D2           ; Copy current row
+      MOVE.W  zCol8x\1x\2,D1         ; Copy current column
+      MOVE.W  zRow8x\1x\2,D2         ; Copy current row
       MOVEA.L A3,A0                  ; Restore saved font address to A0
       BSR     _Putc8x\1x\2           ; Print the character in D0
 
@@ -380,16 +380,16 @@ _Print8x\1x\2:
       CMPI.W  #$5A,D1                ; Compare next column to number of columns
       BLO.S   .sc\@                  ; Still in bounds? Skip to column-saving
 
-.nl\@ CLR.W   zCol\1x\2              ; Not in bounds; return to column 0...
-      MOVE.W  zRow\1x\2,D2           ; ...copy current row again
+.nl\@ CLR.W   zCol8x\1x\2            ; Not in bounds; return to column 0...
+      MOVE.W  zRow8x\1x\2,D2         ; ...copy current row again
       ADDQ.W  #1,D2                  ; ...increment it
-      MOVE.W  D2,zRow\1x\2           ; ...and save it again
+      MOVE.W  D2,zRow8x\1x\2         ; ...and save it again
       CMPI.W  #_kRows8x\1x\2,D2      ; Is current row on the screen?
       BLO.S   .tp\@                  ;   Yes, on to the next character
       BSR     _Scroll8x\1x\2         ;   No, scroll one row up first...
       BRA.S   .tp\@                  ;   ...and then on to the next character
 
-.sc\@ MOVE.W  D1,zCol\1x\2           ; In bounds; save the incremented column
+.sc\@ MOVE.W  D1,zCol8x\1x\2         ; In bounds; save the incremented column
       BRA.S   .tp\@                  ; On to the next character
 
 .rt\@ _mLcsIEna                      ; Re-enable interrupts
@@ -400,9 +400,9 @@ _Print8x\1x\2:
       SECTION kSecScratch
 
       DS.W    0                      ; Enforce word alignment
-zCol\1x\2:
+zCol8x\1x\2:
       DC.W    $0000                  ; Column receiving the next character
-zRow\1x\2:
+zRow8x\1x\2:
       DC.W    $0000                  ; Row receiving the next character
 
 
@@ -455,8 +455,8 @@ Putc\1:
       ;   (none)
 GotoXY\1:
       ; No need to jump to shared code for this small function
-      MOVE.W  D0,zCol\2x\3           ; Set column
-      MOVE.W  D1,zRow\2x\3           ; Set row
+      MOVE.W  D0,zCol8x\2x\3         ; Set column
+      MOVE.W  D1,zRow8x\2x\3         ; Set row
       RTS                            ; Back to caller
 
       ; Scroll\1 -- Scroll the entire display up one line
