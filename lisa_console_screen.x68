@@ -58,6 +58,8 @@
 *
 *    - `PutcMyFont`: Draw a glyph at a specified column and row
 *    - `GotoXYMyFont`: Set the screen position for the next `PrintMyFont` call
+*    - `GotoXMyFont`: Set the screen column for the next `PrintMyFont` call
+*    - `GotoYMyFont`: Set the screen row for the next `PrintMyFont` call
 *    - `ScrollMyFont`: Scroll the entire display up one line
 *    - `PrintMyFont`: Print a null-terminated string of 8-bit characters
 *
@@ -427,7 +429,7 @@ zRow8x\1x\2:
 mFont8      MACRO
       ; These routines are only for 8-pixel-wide glyphs
               IFNE (kFont\1GlyphCols-8)
-      FAIL The mFont8Lib macro is only for fonts with 8-pixel-wide glyphs
+      FAIL The mFont8 macro is only for fonts with 8-pixel-wide glyphs
               ENDC
 
       ; Build supporting code if necessary
@@ -459,6 +461,26 @@ GotoXY\1:
       MOVE.W  D1,zRow8x\2x\3         ; Set row
       RTS                            ; Back to caller
 
+      ; GotoX\1 -- Designate the screen column for the next call to Print\1
+      ; Args:
+      ;   D0: (word) Column of the next screen position
+      ; Notes:
+      ;   (none)
+GotoX\1:
+      ; No need to jump to shared code for this small function
+      MOVE.W  D0,zCol8x\2x\3         ; Set column
+      RTS                            ; Back to caller
+
+      ; GotoY\1 -- Designate the screen row for the next call to Print\1
+      ; Args:
+      ;   D0: (word) Row of the next screen position
+      ; Notes:
+      ;   (none)
+GotoY\1:
+      ; No need to jump to shared code for this small function
+      MOVE.W  D0,zRow8x\2x\3         ; Set row
+      RTS                            ; Back to caller
+
       ; Scroll\1 -- Scroll the entire display up one line
       ; Args:
       ;   (none)
@@ -482,6 +504,11 @@ Print\1:
       MOVEA.L #font\1,A3             ; Load address of our font
       BRA     _Print8x\2x\3          ; Jump to shared text printing code
       ; No RTS: the shared code returns to the caller
+
+
+      ; Aliases for the cursor position that include the font's name
+zCol\1        EQU  zCol8x\2x\3
+zRow\1        EQU  zRow8x\2x\3
 
             ENDM
 
