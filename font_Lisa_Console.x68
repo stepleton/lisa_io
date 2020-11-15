@@ -27,6 +27,9 @@
 *
 *    - 30 March 2020: Cosmetic changes to documentation.
 *      (Tom Stepleton)
+*
+*    - 15 November 2020: Add international Lisa keyboard symbols
+*      (Tom Stepleton)
 
 
 * Section 1: Font metrics and convenience macro
@@ -1646,28 +1649,28 @@ fontLisaConsole:
     DC.B    $FE,$AA,$BA,$AA,$FE,$FE,$AA,$FE,$FE
 
 * glyphLisaConsoleIndex:
-    ; #######.
-    ; #.#.#.#.
-    ; #.###.#.
-    ; #.#.#.#.
-    ; #######.
-    ; ##.#.##.
-    ; #######.
-    ; ##.#.##.
-    ; #######.
-    DC.B    $FE,$AA,$BA,$AA,$FE,$D6,$FE,$D6,$FE
+    ; ........
+    ; ###.###.
+    ; ...#....
+    ; ..#.#...
+    ; .#...#..
+    ; ........
+    ; ........
+    ; ........
+    ; ........
+    DC.B    $00,$EE,$10,$28,$44,$00,$00,$00,$00
 
 * glyphLisaConsoleNextLine:
+    ; .....##.
+    ; ......#.
+    ; ..#...#.
+    ; .##...#.
     ; #######.
-    ; #.#.#.#.
-    ; #.###.#.
-    ; #.#.#.#.
-    ; #######.
-    ; #.###.#.
-    ; ###.###.
-    ; #.###.#.
-    ; #######.
-    DC.B    $FE,$AA,$BA,$AA,$FE,$BA,$EE,$BA,$FE
+    ; .##.....
+    ; ..#.....
+    ; ........
+    ; ........
+    DC.B    $06,$02,$22,$62,$FE,$60,$20,$00,$00
 
 * glyphLisaConsoleStartOfSelectedArea:
     ; #######.
@@ -1694,16 +1697,16 @@ fontLisaConsole:
     DC.B    $FE,$AA,$BA,$AA,$FE,$AA,$EE,$AA,$FE
 
 * glyphLisaConsoleCharacterTabulationSet:
+    ; ........
+    ; ........
+    ; ...#..#.
+    ; ...##.#.
     ; #######.
-    ; #.#.#.#.
-    ; #.###.#.
-    ; #.#.#.#.
-    ; #######.
-    ; #.#.#.#.
-    ; #.###.#.
-    ; #.#.#.#.
-    ; #######.
-    DC.B    $FE,$AA,$BA,$AA,$FE,$AA,$BA,$AA,$FE
+    ; ...##.#.
+    ; ...#..#.
+    ; ........
+    ; ........
+    DC.B    $00,$00,$12,$1A,$FE,$1A,$12,$00,$00
 
 * glyphLisaConsoleCharacterTabulationWithJustification:
     ; #######.
@@ -1766,28 +1769,28 @@ fontLisaConsole:
     DC.B    $FE,$AA,$BA,$AA,$FE,$82,$AA,$82,$FE
 
 * glyphLisaConsoleSingleShiftTwo:
-    ; #######.
-    ; #.#.#.#.
-    ; #.###.#.
-    ; #.#.#.#.
-    ; #######.
-    ; #.....#.
-    ; #..#..#.
-    ; #.....#.
-    ; #######.
-    DC.B    $FE,$AA,$BA,$AA,$FE,$82,$92,$82,$FE
+    ; ........
+    ; ...#....
+    ; ..#.#...
+    ; .#...#..
+    ; ###.###.
+    ; ..#.#...
+    ; ..###...
+    ; ........
+    ; ........
+    DC.B    $00,$10,$28,$44,$EE,$28,$38,$00,$00
 
 * glyphLisaConsoleSingleShiftThree:
-    ; #######.
-    ; #.#.#.#.
-    ; #.###.#.
-    ; #.#.#.#.
-    ; #######.
-    ; #.....#.
-    ; #.....#.
-    ; #.....#.
-    ; #######.
-    DC.B    $FE,$AA,$BA,$AA,$FE,$82,$82,$82,$FE
+    ; ........
+    ; ..###...
+    ; ..#.#...
+    ; ###.###.
+    ; .#...#..
+    ; ..#.#...
+    ; ...#....
+    ; ........
+    ; ........
+    DC.B    $00,$38,$28,$EE,$44,$28,$10,$00,$00
 
 * glyphLisaConsoleDeviceControlString:
     ; #######.
@@ -1802,28 +1805,28 @@ fontLisaConsole:
     DC.B    $FE,$AA,$AA,$AA,$FE,$FE,$FE,$FE,$FE
 
 * glyphLisaConsolePrivateUseOne:
+    ; ....#...
+    ; ...#....
+    ; .##.##..
     ; #######.
-    ; #.#.#.#.
-    ; #.#.#.#.
-    ; #.#.#.#.
+    ; ######..
     ; #######.
-    ; #######.
-    ; ###.###.
-    ; #######.
-    ; #######.
-    DC.B    $FE,$AA,$AA,$AA,$FE,$FE,$EE,$FE,$FE
+    ; .##.##..
+    ; ........
+    ; ........
+    DC.B    $08,$10,$6C,$FE,$FC,$FE,$6C,$00,$00
 
 * glyphLisaConsolePrivateUseTwo:
-    ; #######.
-    ; #.#.#.#.
-    ; #.#.#.#.
-    ; #.#.#.#.
-    ; #######.
-    ; #######.
-    ; ##.#.##.
-    ; #######.
-    ; #######.
-    DC.B    $FE,$AA,$AA,$AA,$FE,$FE,$D6,$FE,$FE
+    ; ........
+    ; ........
+    ; ##..###.
+    ; ..#.....
+    ; ...#....
+    ; ....###.
+    ; ........
+    ; ........
+    ; ........
+    DC.B    $00,$00,$CE,$20,$10,$0E,$00,$00,$00
 
 * glyphLisaConsoleSetTransmitState:
     ; #######.
@@ -1838,16 +1841,16 @@ fontLisaConsole:
     DC.B    $FE,$AA,$AA,$AA,$FE,$FE,$AA,$FE,$FE
 
 * glyphLisaConsoleCancelCharacter:
+    ; ........
+    ; ........
+    ; ..#.....
+    ; .##.....
     ; #######.
-    ; #.#.#.#.
-    ; #.#.#.#.
-    ; #.#.#.#.
-    ; #######.
-    ; ##.#.##.
-    ; #######.
-    ; ##.#.##.
-    ; #######.
-    DC.B    $FE,$AA,$AA,$AA,$FE,$D6,$FE,$D6,$FE
+    ; .##.....
+    ; ..#.....
+    ; ........
+    ; ........
+    DC.B    $00,$00,$20,$60,$FE,$60,$20,$00,$00
 
 * glyphLisaConsoleMessageWaiting:
     ; #######.
@@ -1886,16 +1889,16 @@ fontLisaConsole:
     DC.B    $FE,$AA,$AA,$AA,$FE,$AA,$EE,$AA,$FE
 
 * glyphLisaConsoleStartOfString:
+    ; ........
+    ; .#...#..
     ; #######.
     ; #.#.#.#.
-    ; #.#.#.#.
-    ; #.#.#.#.
-    ; #######.
-    ; #.#.#.#.
-    ; #.###.#.
+    ; #..#..#.
     ; #.#.#.#.
     ; #######.
-    DC.B    $FE,$AA,$AA,$AA,$FE,$AA,$BA,$AA,$FE
+    ; .#...#..
+    ; ........
+    DC.B    $00,$44,$FE,$AA,$92,$AA,$FE,$44,$00
 
 * glyphLisaConsoleSingleGraphicCharacterIntroducer:
     ; #######.
@@ -1982,16 +1985,16 @@ fontLisaConsole:
     DC.B    $FE,$AA,$AA,$AA,$FE,$82,$82,$82,$FE
 
 * glyphLisaConsoleNoBreakSpace:
+    ; ........
+    ; ........
+    ; ........
+    ; ........
+    ; ........
+    ; #.....#.
     ; #######.
-    ; #.#...#.
-    ; #.###.#.
-    ; #...#.#.
-    ; #######.
-    ; #######.
-    ; #######.
-    ; #######.
-    ; #######.
-    DC.B    $FE,$A2,$BA,$8A,$FE,$FE,$FE,$FE,$FE
+    ; ........
+    ; ........
+    DC.B    $00,$00,$00,$00,$00,$82,$FE,$00,$00
 
 * glyphLisaConsoleInvertedExclamationMark:
     ; ...#....
