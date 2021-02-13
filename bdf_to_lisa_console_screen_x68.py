@@ -101,7 +101,7 @@ FLAGS.output.write(textwrap.dedent(f"""\
 
     define{FONT_NAME} MACRO
                   mFont8 {FONT_NAME},1,9
-               ENDM
+                ENDM
 
 
     font{FONT_NAME}:

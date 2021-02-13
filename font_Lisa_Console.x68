@@ -30,6 +30,9 @@
 *
 *    - 15 November 2020: Add international Lisa keyboard symbols
 *      (Tom Stepleton)
+*
+*    - 13 February 2021: New glyph for $9E (Private Message)
+*      (Tom Stepleton)
 
 
 * Section 1: Font metrics and convenience macro
@@ -1960,17 +1963,17 @@ fontLisaConsole:
     ; #######.
     DC.B    $FE,$AA,$AA,$AA,$FE,$82,$AA,$82,$FE
 
-* glyphLisaConsolePrivacyMessage:
+* glyphLisaConsolePrivateMessage:
+    ; ........
+    ; .##.##..
     ; #######.
-    ; #.#.#.#.
-    ; #.#.#.#.
-    ; #.#.#.#.
     ; #######.
-    ; #.....#.
-    ; #..#..#.
-    ; #.....#.
-    ; #######.
-    DC.B    $FE,$AA,$AA,$AA,$FE,$82,$92,$82,$FE
+    ; .#####..
+    ; ..###...
+    ; ...#....
+    ; ........
+    ; ........
+    DC.B    $00,$6C,$FE,$FE,$7C,$38,$10,$00,$00
 
 * glyphLisaConsoleApplicationProgramCommand:
     ; #######.
